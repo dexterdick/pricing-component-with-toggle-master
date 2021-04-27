@@ -39,22 +39,23 @@ const cardData = [basic, professional, master];
 cardData.forEach((card) => {
   // create html EL
   const article = document.createElement("article");
-  const h3 = document.createElement("h3");
   const h2 = document.createElement("h2");
+  const h3 = document.createElement("h3");
   const ul = document.createElement("ul");
   const btn = document.createElement("button");
   btn.appendChild(document.createTextNode("learn more"));
 
   // add class
   article.classList.add(...card.cardClass);
-  h2.classList.add(...card.priceClass);
-  h3.classList.add(...card.planClass);
+  h2.classList.add(...card.planClass);
+  h3.classList.add(...card.priceClass);
   btn.classList.add(...card.btnClass);
+  btn.setAttribute("aria-label", "plan button");
 
   ul.classList.add("features");
   // load data
-  h3.innerHTML = card.plan;
-  h2.innerHTML = card.price[annually];
+  h2.innerHTML = card.plan;
+  h3.innerHTML = card.price[annually];
 
   card.features.forEach((feature, i) => {
     const li = document.createElement("li");
@@ -62,7 +63,7 @@ cardData.forEach((card) => {
     li.classList.add("features__item");
     li.innerHTML = feature;
   });
-  article.append(h3, h2, ul, btn);
+  article.append(h2, h3, ul, btn);
   cards.appendChild(article);
 });
 
@@ -77,12 +78,12 @@ toggle.addEventListener("click", function () {
 });
 
 function changePrice(plan) {
-  const h2 = document.querySelectorAll("h2");
+  const h3 = document.querySelectorAll("h3");
   cardData.forEach((card, i) => {
     if (plan === "annually") {
-      h2[i].innerHTML = card.price[annually];
+      h3[i].innerHTML = card.price[annually];
     } else if (plan === "monthly") {
-      h2[i].innerHTML = card.price[monthy];
+      h3[i].innerHTML = card.price[monthy];
     }
   });
 }
