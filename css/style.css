@@ -66,7 +66,6 @@ body {
 .toggle__label {
   opacity: 0.7;
 }
-
 .toggle__switch,
 .toggle__btn {
   cursor: pointer;
@@ -84,7 +83,6 @@ body {
   border-radius: 25px;
   position: relative;
   margin: 0 20px;
-  transition: all 0.2s;
 }
 
 .toggle__switch:hover {
@@ -100,7 +98,7 @@ body {
   border-radius: 50px;
   outline: none;
   border-style: none;
-  transition: all 0.5s;
+  transition-duration: 0.5s;
 }
 
 .toggle__btn.monthly {
