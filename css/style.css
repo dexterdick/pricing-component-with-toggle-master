@@ -84,11 +84,11 @@ body {
   border-radius: 25px;
   position: relative;
   margin: 0 20px;
+  transition: all 0.2s;
 }
 
 .toggle__switch:hover {
   opacity: 0.7;
-  transition: all 0.2s;
 }
 
 .toggle__btn {
@@ -178,13 +178,13 @@ body {
   font-weight: 700;
   cursor: pointer;
   margin: 1rem 0;
+  transition: all 0.5s;
 }
 
 .btn:hover {
   background-image: unset;
   background-color: transparent;
   border: 1px solid var(--lineargradient-to);
-  transition: all 0.5s;
   color: var(--lineargradient-to);
 }
 
